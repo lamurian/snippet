@@ -1,0 +1,16 @@
+project:
+  output-dir: _render/report
+
+book:
+  title: "Book Title"
+  subtitle: "Book Subtitle"
+  author: "Author Name"
+  chapters:
+    - index.qmd
+    - results/descriptive.qmd
+    - results/seasonality.qmd
+    - results/arima.qmd
+    - results/spectral.qmd
+
+in:
+  report: true
