@@ -20,10 +20,16 @@ tar_option_set(
 seed <- 1810
 
 # Set paths for the raw data
-tbls <- lsData(pattern = "*csv")
+raws <- lsData(pattern = "*csv")
 
 # Set the analysis pipeline
 list(
+
+  # List data files
+  tar_target(fpath, raws[["data"]], format = "file"),
+
+  # Read the data frame
+  tar_target(tbl, readData(fpath)),
 
   # Generate documentation
   tar_quarto(readme, "README.qmd", priority = 0)
